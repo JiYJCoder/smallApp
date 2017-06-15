@@ -1,0 +1,73 @@
+<view class="page">
+  <block wx:if="{{isLogin}}">
+     <view class="page-card-bg">
+     <view class="page-card">
+        <image src="{{card.face}}?x-oss-process=image/resize,m_fill,h_100,w_100" data-src="{{card.face}}" mode="aspectFill" bindtap="clickFace"/>
+        <view class="card-title">{{card.truename}}<view><b style="margin-left:0px">{{card.position}}</b></view></view>
+        <view><span>电话</span><b class="card-tel" data-val="{{card.tel}}" bindtap="callPhone">{{card.tel}}</b></view>
+        <view><span>公司</span><b>{{card.company}}</b></view>
+        <view><span>邮箱</span><b>{{card.email}}</b></view>
+        <button open-type="share" class="share-icon"></button>
+     </view>
+     </view>
+     <view class="page-menu">
+          <view class="weui-grids">
+            <view class="weui-grid" bindtap="viewCard">
+                <image class="weui-grid__icon" src="/style/icons/view.png" />
+                <view class="weui-grid__label">人气: {{card.viewNum}}</view>
+            </view>
+            <view class="weui-grid" bindtap="praiseCard">
+                <image class="weui-grid__icon" src="/style/icons/praise.png" />
+                <view class="weui-grid__label">赞: {{card.praiseNum}}</view>
+            </view>
+            <view class="weui-grid" bindtap="collectCard">
+                <image class="weui-grid__icon" src="/style/icons/collect.png" />
+                <view class="weui-grid__label">收藏: {{card.collectNum}}</view>
+            </view>
+          </view>
+     </view>
+     <view class="mallImg" wx:if="{{mallImgList.length>0}}" bindtap="isState">
+        <text>商品</text>
+        <view class="mallImgList" wx:for="{{mallImgList}}">
+            <image src="/style/icons/detailImg.jpg" style="width:128rpx;height:128rpx;"></image>
+        </view>
+        <view class="arrow"></view>
+     </view>
+     <view class="page-info">
+          <view class="weui-flex">
+               <view class="weui-flex__item page-moreinfo">
+                    <view wx:if="{{card.education}}"><span>学历</span><b>{{card.education}}</b></view>
+                    <view wx:if="{{card.startWorkYear}}"><span>工作年限</span><b>{{card.startWorkYear}}</b></view>
+                    <view wx:if="{{card.intro}}"><span>签名</span><b>{{card.intro}}</b></view>
+                    <view wx:if="{{imageList.length>0}}"><span>相册</span>
+                    <view class="weui-cell weui-cell_access" bindtap="openMyTrend">
+                      <view class="weui-cell__bd">
+                          <block wx:for="{{imageList}}" wx:for-item="image">
+                          <image src="{{image.url}}?x-oss-process=image/resize,m_fill,h_100,w_100" mode="aspectFill"/>
+                          </block>
+                      </view>
+                      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </view>
+                    </view>
+               </view>
+          </view>
+     </view>
+     <view class="page-hd">
+        <button type="primary" bindtap="openMyCards">我的名片夹</button>
+        <button type="default" bindtap="openUserInfo">编辑名片</button>
+     </view>
+     <view class="page-share">
+         <view>点击右上角，分享我的名片，名气越传越大</view>
+         <view>再次使用：发现-小程序-搜索"商城名片"</view>
+         <view><button type="default" class="share-view" size="mini" bindtap="openShareImg"><view><image src="/style/icons/frendicon.png" /><span>点我生成图片分享到朋友圈</span></view></button></view>
+     </view>
+  </block>
+  <block wx:else>
+     <view class="page-nodata">
+        <view><icon type="info" size="100" color="#e1e1e1"/></view>
+        <view class="nodata-desc">你还没有名片哦，赶快来做一张吧！</view>
+        <view><button type="primary" bindtap="openRegister">创建我的名片</button></view>
+     </view>
+  </block>
+  <contact-button type="default-light" size="27" session-from="weapp"></contact-button>
+</view>

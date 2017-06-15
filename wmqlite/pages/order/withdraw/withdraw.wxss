@@ -1,0 +1,66 @@
+page{
+    padding: 40rpx 30rpx;
+    box-sizing: border-box;
+}
+.withdraw{
+    background: #fff;
+    padding: 40rpx 60rpx;
+    border-radius: 8px;
+}
+.name{
+    display: flex;
+}
+.name .text{
+    font-size: 30rpx;
+    color: #666;
+    margin-top: 12rpx;
+}
+.title{
+    font-size: 32rpx;
+    color: #1a1a1a;
+    margin-right: 48rpx;
+}
+.nameData{
+    color: #143ccc;
+}
+.moneySet{
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    padding: 20rpx 0 20rpx 40rpx;
+}
+.moneySet text{
+    font-size: 48rpx;
+}
+.moneySet input{
+    margin-left: 10rpx;
+    font-size: 72rpx;
+    padding-top: 17rpx;
+}
+.tip{
+    margin-top: 35rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+.tip .all{
+    color: #143ccc;
+}
+.bottomTip{
+    text-align: center;
+    display: block;
+    color: #666;
+}
+.withdrawBtn{
+    margin-top: 74rpx;
+    color: #fff;
+    background: #ff894c;
+    border: 0;
+}
+.withdrawBtn.current{
+    background: #ffc4a6;
+}
+.withdrawBtnHover{
+    background: #ff7935;
+}
+.tip .over{
+    color: red;
+}

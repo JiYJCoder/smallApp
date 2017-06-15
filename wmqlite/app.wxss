@@ -1,0 +1,45 @@
+@import 'style/weui.wxss';
+page,.page{
+    background: #f1f1f1;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+button{margin-bottom:15px}
+button[type="primary"] {
+  color:#FFFFFF;
+  background-color:#ff894c;
+}
+.button-hover[type="primary"]{  
+  background-color:#e76d30;
+}
+button[disabled][type="primary"] {
+  background-color:#f8bc9f;
+}
+button[loading][type="primary"] {
+  color:rgba(255, 255, 255, 0.6);
+  background-color:#e76d30;
+}
+.arrow{
+    content:" ";
+    display:inline-block;
+    height:24rpx;
+    width:24rpx;
+    border-width:2rpx 2rpx 0 0;
+    border-color:#303030;
+    border-style:solid;
+    transform:matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.page-hd{padding:15px;}
+.page-nodata{margin:100px 15px 15px; text-align: center}
+.page-nodata view{margin-bottom: 20px}
+.page-nodata view.nodata-desc{font-size:14px; color:#666}
+.weui-grids{background-color: #fff; border-width:0px; border-top:solid 1px #e5e5e5; border-bottom:solid 1px #e5e5e5;}
+.weui-grids>.weui-grid{margin:10px 0;border-bottom-width:0px; padding:10px 0; border-right-color: #e5e5e5}
+.weui-grids>.weui-grid:last-child{border-right-width:0px}
+.weui-footer{margin:10px 0 20px 0}
+.weui-input{text-align: right; color:#808080;}
+.weui-cell__ft_in-access{color:#808080}
+.weui-footer__text navigator{display: inline-block; color:#ff894c}
+contact-button{background-color: #ff894c; width:42px; height: 42px; line-height: 60px; text-align: center; border-radius: 50%; overflow: hidden; position: fixed; bottom: 20px; right:10px; z-index:99}

@@ -1,0 +1,23 @@
+<view class="mallImg test"><image src="/style/icons/mallImg.jpg"></image></view>
+<view class="mallLong clearfix">
+    <view class="mallLongIcon"><image src="/style/icons/mallTime.png" style="width:54rpx;height:58rpx"></image></view>
+    <view class="mallLongData clearfix">
+        <view wx:for="{{mallDates}}" class="mallLongDataTime {{_num == index?'current':''}}" bindtap="currentDate" data-num ="{{index}}">
+            {{item.month}}个月
+        </view>
+    </view>
+</view>
+<view class="mallPrice clearfix">
+    <view class="mallPriceIcon"><image src="/style/icons/mallPay.png" style="width:59rpx;height:59rpx"></image></view>
+    <view class="mallPriceData">
+        <text>{{mallDates[_num].price/100}}<text>元</text></text>
+    </view>
+</view>
+<button size="default" class="mallBuyBtn" hover-class="mallBuyBtnHover" bindtap="addShop">开通商城</button>
+<view class="mallTtp">
+    <view class="title">开通商城优势</view>
+    <view>1：模板式发布商品简单、方便、更多的商品详情可让用户更了解你的商品</view>
+    <view>2：商城内发布商品自动分享到圈子</view>
+    <view>3：用户可直接在线下单并支付购买</view>
+    <view>4：订单费用在24小时以微信转账方式自动转到申请的微信，可在“微信-我-钱包”中查看详细记录。</view>
+</view>

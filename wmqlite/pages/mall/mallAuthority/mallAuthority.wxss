@@ -1,0 +1,86 @@
+@import '/app.wxss';
+page{
+    padding-bottom: 50rpx;
+    background: #ffffff;
+}
+.mallImg{
+    width: 391rpx;
+    height: 256rpx;
+    margin: 92rpx auto 112rpx auto; 
+}
+.mallImg > image{
+    width: 391rpx;
+    height: 256rpx;
+}
+.mallLong {
+    padding: 0 30rpx;
+}
+.mallLongIcon{
+    float: left;
+    width: 54rpx;
+    height: 58rpx;
+}
+.mallLongData{
+    float: left;
+    margin-left: 13rpx;
+}
+.mallLongDataTime{
+    float: left;
+    width: 138rpx;
+    height: 58rpx;
+    border: 1px solid #3b3b3b;
+    border-radius: 5px;
+    margin-left: 15rpx;
+    text-align: center;
+    line-height: 58rpx;
+}
+.mallLongDataTime.current{
+    border: 1px solid red;
+    color: red;
+}
+.mallPrice{
+    margin-top: 40rpx;
+    padding-left: 30rpx;
+}
+.mallPriceIcon{
+    float: left;
+    width: 59rpx;
+    height: 59rpx;
+}
+.mallPriceData{
+    float: left;
+    margin-left: 33rpx;
+    height: 59rpx;
+}
+.mallPriceData text:nth-child(1){
+    color: #cb1818;
+    font-size: 48rpx;
+}
+.mallPriceData text:nth-child(2){
+    color: #666666;
+    margin-left: 27rpx;
+    font-size: 30rpx;
+}
+.mallPriceData text:nth-child(1) text{
+    color: #1a1a1a;
+    font-size: 30rpx;
+    margin: 0;
+}
+.mallBuyBtn{
+    background: #cb1818;
+    color: #fff;
+    width: 80%;
+    margin-top: 60rpx;
+}
+.mallBuyBtnHover{
+    background: red;
+}
+.mallTtp{
+    padding: 0 20rpx;
+}
+.mallTtp .title{
+    font-weight:bold; 
+}
+.mallTtp view{
+    margin-top: 10rpx;
+}

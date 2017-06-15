@@ -1,0 +1,23 @@
+.DetailsList{
+    padding: 30rpx;
+    background: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.time{
+    color: #666;
+}
+.left{
+    flex-grow:1; 
+}
+.right.current{
+    color: #f8bc9f
+}
+.text{
+    padding-top: 10rpx;
+    font-size: 30rpx;
+    display: block;
+    text-align: center;
+}

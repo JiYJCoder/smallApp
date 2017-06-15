@@ -1,0 +1,31 @@
+<view class="page">
+    <form bindsubmit="formSubmit">
+        <view class="weui-uploader">
+          <view class="weui-uploader__hd">
+              <textarea placeholder="这一刻的想法..." name="content" maxlength="1000" auto-height="true" style="min-height:200rpx; width:100%" cursor-spacing="20"  bindblur="textChange"/>
+          </view>
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files">
+              <block wx:for="{{imageList}}" wx:for-item="image">
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" mode="aspectFill" bindtap="previewImage"></image>
+                </view>
+              </block>
+            </view>
+            <view class="weui-uploader__input-box">
+              <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            </view>
+          </view>
+          <view class="weui-uploader__footer" bindtap="tapLocation">
+              {{location}}
+          </view>
+          <input name="userId" hidden="true" value="{{userId}}"/>
+          <input name="mapAddress" hidden="true" value="{{mapAddress}}"/>
+          <input name="mapX" hidden="true" value="{{mapX}}"/>
+          <input name="mapY" hidden="true" value="{{mapY}}"/>
+        </view>
+        <view class="weui-btn-area">
+             <button type="primary" loading="{{loading}}" form-type="submit">{{submitText}}</button>
+        </view>
+    </form>
+</view>

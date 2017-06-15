@@ -1,0 +1,27 @@
+page{
+    background: #fff;
+    text-align: center;
+    padding: 127rpx 0 75rpx;
+}
+.title{
+    font-size: 36rpx;
+    margin-top: 10rpx;
+}
+.money{
+    font-size: 73rpx;
+}
+.withdrawBtn{
+    background: #ff894c;
+    color: #fff;
+    font-size: 36rpx;
+    width: 80%;
+    margin-top: 80rpx;
+}
+.withdrawBtnHover{
+    background: #fb7b38;
+}
+.navDetails{
+    margin-top: 10rpx;
+    font-size: 32rpx;
+    color: #143ccc;
+}

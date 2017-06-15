@@ -1,0 +1,43 @@
+<view class="commTab clearfix">
+    <view class="commNow {{_num == 1?'current':''}}" bindtap="tab" data-num="1">我卖的</view>
+    <view class="commExpired {{_num == 0?'current':''}}" bindtap="tab" data-num="0">我买的</view>
+</view>
+<view class="commNowList" wx:if="{{_num == 1}}"  wx:for="{{mallList}}">
+    <view class="commNowListDetil">
+        <view class="hd clearfix" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" style="{{item.left}}" data-index="{{index}}"  data-id="{{item.id}}" bindtap="getGoodOrder">
+            <view class="commNowListDetilImg">
+                <image src="{{item.cover}}" style="width:188rpx;height:188rpx;" mode="scaleToFill"></image>
+            </view>
+            <view class="commNowListDetilText order">
+                <view class="title">{{item.title}}</view>
+                <view class="receiver">收货人：{{item.truename}} {{item.tel}}</view>
+                <view class="price">￥{{item.totalPrice/100}}</view>
+                <view class="time">{{item.createTime}}</view>
+                <view class="orderStatus {{item.state ==1?'':'current'}}">{{item.state ==0?"未支付":"已支付"}}</view>
+            </view>
+        </view>
+        <view class="del" catchtap="delGood" data-id="{{item.id}}" catchtap="delGoodOrder" data-index="{{index}}">
+                删除
+        </view>
+    </view>
+</view>
+<view class="commNowList" wx:if="{{_num == 0}}"  wx:for="{{mallList}}">
+    <view class="commNowListDetil">
+        <view class="hd clearfix" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" style="{{item.left}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="getGoodOrder">
+            <view class="commNowListDetilImg">
+                <image src="{{item.cover}}" style="width:188rpx;height:188rpx;" mode="scaleToFill"></image>
+            </view>
+            <view class="commNowListDetilText order">
+                <view class="title">{{item.title}}</view>
+                <view class="receiver">收货人：{{item.truename}} {{item.tel}}</view>
+                 <view class="price">￥{{item.totalPrice/100}}</view>
+                <view class="time">{{item.createTime}}</view>
+                <view class="orderStatus {{item.state ==1?'':'current'}}">{{item.state ==0?"未支付":"已支付"}}</view>
+            </view>
+        </view>
+        <view class="del" catchtap="delGood" data-id="{{item.id}}" catchtap="delGoodOrder" data-index="{{index}}">
+                删除
+        </view>
+    </view>
+</view>
+<view class="text" wx:if="{{isReach}}">{{tipText}}</view>

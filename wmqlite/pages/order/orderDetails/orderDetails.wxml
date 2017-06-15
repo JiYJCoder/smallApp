@@ -1,0 +1,33 @@
+<view class="title">
+    <view class="consignee">
+        <text>收货人：</text>
+        <text class="name">{{orderIdData.truename}}</text>
+        <text class="tel">{{orderIdData.tel}}</text>
+    </view>
+    <view class="address">
+        <text>收货地址：</text>
+        <text>{{orderIdData.address}}</text>
+    </view>
+</view>
+<view class="orderDetails">
+    <view class="orderDetailsImg"><image src="{{orderIdData.cover}}" style="width:160rpx;height:160rpx;" mode="scaleToFill"></image></view>
+    <view class="orderDetailsTitle">{{orderIdData.title}}</view>
+    <view class="orderDetailsPri">
+        <view class="price">￥{{orderIdData.price/100}}</view>
+        <view class="num">x{{orderIdData.num}}</view>
+    </view>
+</view>
+<view class="orderPriceDetails">
+    <view class="mallPrice ty"><text>商品金额</text><text>￥{{orderIdData.totalPrice/100}}</text></view>
+    <!--<view class="mallchagePrice ty"><text>订单改价</text><text>-￥{{orderIdData.truename}}</text></view>-->
+    <!--<view class="mallFreight ty"><text>运费</text><text>{{orderIdData.truename}}</text></view>-->
+    <view class="realPrice ty"><text>实际支付</text><text>{{orderIdData.totalPrice/100}}</text></view>
+</view>
+<view class="btn">
+    <view class="contactBtn" hover-class="contactBtnHover" bindtap="makePhoneCall">
+        {{isWho}}
+    </view>
+    <view class="payBtn contactBtn" hover-class="payBtnHov" wx:if="{{pay}}" bindtap="payGoodOrder">
+        支付
+    </view>
+</view>

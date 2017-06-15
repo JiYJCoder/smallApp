@@ -1,0 +1,23 @@
+<view class="withdraw">
+    <view class="name">
+        <text class="title">到账微信号</text>
+        <view>
+            <text class="nameData">{{name}}</text>
+            <view class="text">提现到微信，手续费率1%</view>
+        </view>
+    </view>
+    <view class="money">
+        <text class="title">提现金额</text>
+        <view class="moneySet">
+            <text>￥</text>
+            <input type="digit" bindblur="setMoney" value="{{setMoney/100}}"/>
+        </view>
+        <view class="tip">
+            <text wx:if="{{setMoney<=money&&setMoney>0}}">额外扣除￥{{fee}}</text>
+            <text wx:if="{{setMoney>money}}" class="over">超过零钱余额</text>
+            <text wx:if="{{setMoney==0||''}}">零钱余额￥{{money/100}},</text><text wx:if="{{setMoney==''||0}}" class="all" bindtap="allWithdraw"> 全部提现</text>
+        </view>
+    </view>
+    <button class="withdrawBtn {{withdraw?'':'current'}}" hover-class="{{withdraw?'withdrawBtnHover':''}}" bindtap="{{withdraw ?'doBankMoney' :''}}">提现</button>
+    <text class="bottomTip">24小时内到账</text>
+</view>

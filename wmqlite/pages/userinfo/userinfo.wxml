@@ -1,0 +1,94 @@
+<view class="page">
+<form bindsubmit="formSubmit">
+    <input name="userId" value="{{userId}}" hidden="true"/>
+    <input name="face" value="{{face}}" hidden="true"/>
+    <view class="weui-cells">
+        <navigator class="weui-cell weui-cell_access" bindtap="uploadFace">
+            <view class="weui-cell__bd">
+                头像
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+                <image src="{{face}}" mode="aspectFill"/>
+            </view>
+        </navigator>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                姓名<b>*</b>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="truename" maxlength="20" placeholder="暂无" value="{{truename}}"/>
+            </view>
+        </view>
+         <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                公司
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="company" maxlength="30" placeholder="暂无"  value="{{company}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                职位<b>*</b>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="position" maxlength="20" placeholder="暂无"  value="{{position}}"/>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                手机<b>*</b>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="tel" maxlength="11" type="number" placeholder="暂无"  value="{{tel}}"/>
+            </view>
+        </view>    
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                邮箱
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="email" maxlength="30" placeholder="暂无"  value="{{email}}"/>
+            </view>
+        </view>    
+        <navigator class="weui-cell weui-cell_access">
+            <view class="weui-cell__bd">
+                学历
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+            <input hidden="true" name="education" value="{{education}}"/>
+            <picker bindchange="bindEduChange" value="{{education}}" range="{{eduArr}}" range-key="name">
+                <view class="picker">
+                {{eduArr[education].name}}
+                </view>
+            </picker>
+            </view>
+        </navigator>
+         <navigator class="weui-cell weui-cell_access">
+            <view class="weui-cell__bd">
+                参与工作
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+            <input hidden="true" name="startWorkYear" value="{{year}}"/>
+            <picker bindchange="bindYearChange" mode="date" value="{{year}}" start="2000-01-01" end="2017-01-01" fields="year">
+                <view class="picker">
+                {{year}}年
+                </view>
+            </picker>
+            </view>
+        </navigator>
+    </view>
+    <view class="weui-cells">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea placeholder="写点什么描述下自己" name="intro" maxlength="400" style="height:160rpx" cursor-spacing="20" value="{{intro}}" />
+            </view>
+        </view>
+    </view>
+    <view class="weui-btn-area">
+        <button type="primary" loading="{{loading}}" form-type="submit">{{submitText}}</button>
+    </view>
+    </form>
+</view>

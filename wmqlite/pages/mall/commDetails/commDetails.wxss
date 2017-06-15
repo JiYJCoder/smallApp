@@ -1,0 +1,219 @@
+.DetailsImg{
+    height: 610rpx;
+}
+.DetailsData{
+    min-height: 506rpx;
+    padding: 40rpx 20rpx 0 20rpx;
+    background: #fff;
+}
+.DetailsData .title{
+    font-size: 38rpx;
+    /*margin-top: */
+}
+.DetailsDataOne{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.DetailsData .bewrite{
+    font-size: 30rpx;
+    color: #666;
+    margin-top: 12rpx;
+    line-height: 36rpx;
+}
+.navDetails{
+    background: #fff;
+    width: 100%;
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+    padding:0 20rpx;
+    display: flex;
+    box-sizing: border-box;
+    justify-content:space-between;
+    align-items: center;
+}
+.navDetailsHover{
+    background: #d8d8d8;
+}
+.arrow{
+    content:" ";
+    display:inline-block;
+    height:24rpx;
+    width:24rpx;
+    border-width:2rpx 2rpx 0 0;
+    border-color:#303030;
+    border-style:solid;
+    transform:matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.DetailsDataPrice{
+    font-size: 48rpx;
+    color: #cb1818;
+}
+.DetailsDataPrice text{
+    font-size: 30rpx;
+    color: #666;
+    margin-left: 17rpx;
+    text-decoration:line-through;
+}
+.DetailsDataBtn{
+    font-size: 30rpx;
+    background: #cb1818;
+    color: #fff;
+    width: 180rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    border-radius: 5px;
+}
+.DetailsDataBtn.current{
+    background: #b3b3b3;
+}
+.DetailsDataBtnHov{
+    background: red;
+}
+.buyShow{
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+.buyShowHead{
+    padding: 0 20rpx;
+    height: 168rpx;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+}
+.buyShowHead .img{
+    width: 200rpx;
+    height: 200rpx;
+    text-align: center;
+    margin-top: -61rpx;
+    background: #fff;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #000;
+    opacity: 0.5;
+}
+.numPrice{
+    padding-top: 12rpx;
+    margin-left: 5rpx;
+    flex: 1;
+}
+.numPrice .price{
+    font-size: 48rpx;
+    color: #cb1818;
+}
+.numPrice .num{
+    font-size: 30rpx;
+    color: #666;
+}
+.buyShowHead .close{
+    margin-top: 12rpx;
+}
+.mallNum{
+    height: 98rpx;
+    padding: 0 20rpx;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d9d9d9;
+}
+.btn{
+    width: 198rpx;
+    height: 46rpx;
+    border: 1px solid #666;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    line-height: 46rpx;
+}
+.btn .less{
+    width: 58rpx;
+    border-right: 1px solid #666;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn .add{
+    width: 58rpx;
+    border-left: 1px solid #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn input{
+    display: block;
+    width: 80rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+.mallNorm{
+    min-height: 129rpx;
+    padding: 30rpx 20rpx;
+    border-bottom: 1px solid #d9d9d9;
+}
+.NormList{
+    margin-top: 10rpx;
+    display: flex;
+    flex-wrap:wrap ;
+}
+.NormChild{
+    width: 198rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin-left: 30rpx;
+    margin-bottom: 20rpx;
+}
+.NormChild.current{
+    border: 1px solid #cb1818;
+    color: #cb1818;
+}
+.address .title{
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.addressSel{
+    margin: 0;
+    font-size: 32rpx;
+}
+.addressData{
+    background: #f2f2f2;
+    font-size: 30rpx;
+    padding: 10rpx 20rpx;
+}
+.tip{
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    padding-left: 70rpx;
+    margin-top: 20rpx;
+}
+.tip image{
+    margin-right: 10rpx;
+    vertical-align:middle;
+}
+.orderBtn{
+    width: 96%;
+    color: #fff;
+    background: #cb1818;
+    margin-top: 20rpx;
+}
+.orderBtnHov{
+    background: red;
+}

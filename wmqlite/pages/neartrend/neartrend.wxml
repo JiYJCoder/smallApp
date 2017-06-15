@@ -1,0 +1,61 @@
+<import src="/template/trend.wxml"/>
+<view class="page" bindtap="onTapPage">
+    <view class="swiper-tab">
+    <view class="swiper-tab-list" bindtap="swichNav">最新的</view>  
+    <view class="swiper-tab-list on">附近的</view>  
+    </view>
+    <template is="tempPost" data="{{userFace}}"/>
+    <block wx:if="{{trendList.length>0}}">
+       <view class="page-item" wx:for="{{trendList}}" wx:for-index="ind" wx:for-item="item">
+        <view class="page-face">
+           <image src="{{item.face}}?x-oss-process=image/resize,m_fill,h_100,w_100" data-userId="{{item.userId}}"  mode="aspectFill" data-truename="{{item.truename}}" bindtap="openCard"/>
+        </view>
+        <view class="page-warp">
+           <view class="page-title"><text data-userId="{{item.userId}}" data-truename="{{item.truename}}" bindtap="openCard">{{item.truename}}</text></view>
+           <view class="page-data"><text selectable="true">{{item.content}}</text></view>
+           <view class="page-image" wx:if="{{item.imageList.length>0}}">
+           <block wx:if="{{item.imageList.length==1}}">
+           <image src="{{item.imageList[0].url}}?x-oss-process=image/resize,m_lfit,h_600,w_600" data-src="{{item.imageList[0].url}}" data-index="{{ind}}" mode="widthFix" bindtap="previewImage"/>
+           </block>
+           <block wx:else>
+           <block wx:for="{{item.imageList}}" wx:for-item="image">
+           <image src="{{image.url}}?x-oss-process=image/resize,m_fill,h_120,w_120" data-src="{{image.url}}" data-index="{{ind}}" mode="aspectFill" bindtap="previewImage"/>
+           </block>
+           </block>
+           </view>
+           <block wx:if="{{item.showMap==1}}">
+           <view class="page-address"><b  data-lat="{{item.mapX}}" data-lng="{{item.mapY}}" data-address="{{item.mapAddress}}" bindtap="openLocation">{{item.mapAddress}}</b></view></block>
+           <view class="page-time">{{item.postTime}}
+           <block wx:if="{{userId==item.userId}}">
+           <b data-id="{{item.id}}" data-ind="{{ind}}" bindtap="delTrend">删除</b>
+           </block>
+           <image class="comment-btn" src="/style/icons/comment.png" data-id="{{item.id}}" data-ind="{{ind}}" catchtap="onTapComment"/></view>
+           <view class="page-comment" wx:if="{{item.praiseList.length>0||item.commentList.length>0}}">
+               <view class="praise" wx:if="{{item.praiseList.length>0}}">
+               <block wx:for="{{item.praiseList}}" wx:for-index="i" wx:for-item="praise">
+                   <block wx:if="{{i<item.praiseList.length-1}}">
+                      <b data-userId="{{praise.userId}}" data-truename="{{praise.truename}}" catchtap="openCard">{{praise.truename}}</b>,
+                   </block>
+                   <block wx:else>
+                      <b data-userId="{{praise.userId}}" data-truename="{{praise.truename}}" catchtap="openCard">{{praise.truename}}</b>
+                   </block>
+               </block>
+               </view>
+               <block wx:if="{{item.commentList.length>0}}">
+               <view class="line" wx:if="{{item.praiseList.length>0&&item.commentList.length>0}}"></view>
+               <block wx:for="{{item.commentList}}" wx:for-item="comment">
+               <navigator data-id="{{comment.id}}" data-tid="{{item.id}}" data-ind="{{ind}}" data-uid="{{comment.userId}}" data-truename="{{comment.truename}}" catchtap="openComment"><b data-userId="{{comment.userId}}"  data-truename="{{comment.truename}}" catchtap="openCard">{{comment.truename}}</b>
+               <block wx:if="{{comment.reUserId}}">回复<b data-userId="{{comment.reUserId}}" data-truename="{{comment.truename}}" catchtap="openCard">{{comment.reTruename}}</b></block>
+               <block wx:else>:</block>
+               {{comment.content}}
+               </navigator>
+               </block>
+               </block>
+           </view>
+        </view>
+    </view>
+    <template is="tempLoading" data="{{dataLoading}}"/>
+    </block>
+</view>
+<view class="commentview" hidden="{{commentHide}}" style="top:{{commentTop}}px;" animation="{{animationComment}}"><view catchtap="tapPraiseBtn" data-praise="{{praiseVal}}">{{praiseText}}</view><view catchtap="tapCommentBtn">评论</view></view>
+<view class="footer-comment"><input type="text" placeholder="{{placeholder}}" cursor-spacing="12" focus="{{sendFocus}}" hidden="{{sendHide}}" confirm-type="send" bindconfirm="sendComment"/></view>

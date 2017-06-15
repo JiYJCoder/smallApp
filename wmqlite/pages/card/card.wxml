@@ -1,0 +1,66 @@
+<view class="page">
+ <view class="page-card-bg">
+     <view class="page-card">
+        <image src="{{card.face}}?x-oss-process=image/resize,m_fill,h_100,w_100" data-src="{{card.face}}" mode="aspectFill" bindtap="clickFace"></image>
+        <view class="card-title">{{card.truename}}<view><b style="margin-left:0px">{{card.position}}</b></view></view>
+        <view><span>电话</span><b class="card-tel" bindtap="callPhone">{{card.tel}}</b></view>
+        <view><span>公司</span><b>{{card.company}}</b></view>
+        <view><span>邮箱</span><b>{{card.email}}</b></view>
+        <button class="save-icon" bindtap="savePhone"></button>
+        <button open-type="share" class="share-icon"></button>
+     </view>
+     </view>
+     <view class="page-menu">
+          <view class="weui-grids">
+            <view class="weui-grid">
+                <image class="weui-grid__icon ani-icon" hidden="{{aniHide}}" animation="{{animationData}}" src="/style/icons/anieye.png" a/>
+                <image class="weui-grid__icon" src="/style/icons/view.png" />
+                <view class="weui-grid__label">人气: {{card.viewNum}}</view>
+            </view>
+            <view class="weui-grid" bindtap="praiseCard">
+                <image class="weui-grid__icon" src="/style/icons/{{praiseIcon}}.png" />
+                <view class="weui-grid__label">赞: {{praiseNum}}</view>
+            </view>
+            <view class="weui-grid" bindtap="collectCard">
+                <image class="weui-grid__icon" src="/style/icons/{{collectIcon}}.png" />
+                <view class="weui-grid__label">收藏: {{collectNum}}</view>
+            </view>
+          </view>
+     </view>
+     <view class="mallImg" bindtap="navToMall">
+        <text>商品</text>
+        <view class="mallImgList" wx:for="{{mallImg}}">
+            <image src="{{item}}" style="width:128rpx;height:128rpx;" mode="scaleToFill"></image>
+        </view>
+        <view class="arrow"></view>
+     </view>
+     <view class="page-info">
+          <view class="weui-flex">
+               <view class="weui-flex__item page-moreinfo">
+                    <view wx:if="{{card.education}}"><span>学历</span><b>{{card.education}}</b></view>
+                    <view wx:if="{{card.startWorkYear}}"><span>工作年限</span><b>{{card.startWorkYear}}</b></view>
+                    <view wx:if="{{card.intro}}"><span>签名</span><b>{{card.intro}}</b></view>
+                    <view wx:if="{{imageList.length>0}}"><span>相册</span>
+                    <view class="weui-cell weui-cell_access" bindtap="openMyTrend">
+                      <view class="weui-cell__bd">
+                          <block wx:for="{{imageList}}" wx:for-item="image">
+                          <image src="{{image.url}}?x-oss-process=image/resize,m_fill,h_120,w_120" mode="aspectFill"/>
+                          </block>
+                      </view>
+                      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </view>
+                    </view>
+               </view>
+          </view>
+     </view>
+     <view class="page-hd" style="padding-bottom:30px">
+        <block wx:if="{{isLogin}}">
+            <button type="primary" bindtap="openMyCard">打开我的名片</button>
+            <button type="default" bindtap="collectCard">{{collectText}}</button>
+        </block>
+        <block wx:else>
+            <button type="primary" bindtap="openRegister">创建我的名片</button>
+        </block>
+     </view>
+    <contact-button type="default-light" size="27" session-from="weapp"></contact-button>
+</view>

@@ -1,0 +1,5 @@
+.weui-cell__hd image{width:100rpx; height:100rpx;}
+.weui-cell__bd{margin-left:10px;}
+.cell-info{font-size:30rpx; color:#999;}
+.weui-cell__ft image{width:50rpx; height:50rpx;}
+.weui-cell{padding:20rpx 24rpx 10rpx}

@@ -1,0 +1,10 @@
+<view class="DetailsList" wx:for="{{datas}}">
+    <view class="left">
+        <view class="title">{{item.title}}</view>
+        <view class="time">{{item.createTime}}</view>
+    </view>
+    <view class="right {{item.type==0 ? 'current':''}}">
+        {{item.type==0 ?'+':'-'}}{{item.money/100}}
+    </view>
+</view>
+<view class="text" wx:if="{{isReach}}">{{tipText}}</view>

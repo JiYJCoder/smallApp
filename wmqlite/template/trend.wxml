@@ -1,0 +1,19 @@
+<template name="tempPost">
+    <view class="page-item">
+        <view class="page-face">
+           <image  mode="aspectFill" src="{{userFace}}" />
+        </view>
+        <view class="page-warp">
+           <image class="post-image" src="/style/icons/post_image.png" bindtap="onTapPost"/>
+           <view class="post-remark"><view>一键发布</view><view>告诉世界你需要什么...</view></view>
+        </view>
+    </view>
+</template>
+<template name="tempLoading">
+<block wx:if="{{dataLoading}}">
+<view class="data-loading"><view><image src="/style/icons/loading.gif" /><span>正在加载 ...</span></view></view>
+</block>
+<block wx:else>
+<view class="data-loading">没有更多动态了</view>
+</block>
+</template>

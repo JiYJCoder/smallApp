@@ -1,0 +1,31 @@
+<view class="page">
+<form bindsubmit="formSubmit">
+       <view class="weui-cells__title">已有外贸圈账户登录</view>
+       <input name="openId" hidden="true" value="{{openId}}" />
+       <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    手机号码
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="mobile" class="weui-input"  maxlength="11"  bindinput="mobileInput" placeholder="输入手机号码"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                    验证码
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="code"  maxlength="4" class="weui-input" placeholder="输入验证码" />
+                </view>
+                <view class="weui-cell__ft">
+                    <view class="weui-vcode-btn" bindtap="bindGetCode">{{codeBtnText}}</view>
+                </view>
+            </view>
+         
+    </view>
+    <view class="weui-btn-area">
+         <button type="primary" loading="{{loading}}" form-type="submit">{{submitText}}</button>
+    </view>
+    </form>
+</view>

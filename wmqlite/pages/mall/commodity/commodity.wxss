@@ -1,0 +1,233 @@
+page{
+    padding-bottom: 150rpx;
+    overflow-x:hidden; 
+}
+.commTab{
+    text-align: center;
+    height: 75rpx;
+    border-radius:5px;
+    line-height: 75rpx;
+    background: #ffffff; 
+}
+.commNow{
+    width: 50%;
+    height: 75rpx;
+    float: left;
+    transition:.2s;
+}
+.commNow.current{
+    color: #ff894c;
+    border-bottom: 1px solid #ff894c;
+}
+.commExpired.current{
+    color: #ff894c;
+    border-bottom: 1px solid #ff894c;
+}
+.commExpired{
+    width: 50%;
+    height: 75rpx;
+    float: left;
+    transition:.2s;
+}
+.commNowList{
+    margin-top: 20rpx;
+    background: #fff;
+}
+.commNowListDetil{
+    background: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    position: relative;
+    height: 220rpx;
+}
+.commNowListDetilImg{
+    width: 188rpx;
+    height: 188rpx;
+    float: left;
+}
+.commNowListDetilText{
+    float: left;
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    position: relative;    
+}
+.hd{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 20rpx;
+    padding-top: 15rpx;
+    box-sizing: border-box;
+    transition: left 0.2s ease-in-out;
+    z-index: 10;
+    background: #fff;
+    height: 220rpx;
+}
+.del{
+    background: red;
+    font-size: 32rpx;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0rpx;
+    z-index: 4;
+    width: 120rpx;
+    height: 220rpx;
+    line-height: 220rpx;
+    text-align: center;
+    transition: 0.2s;
+}
+.arrows{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.arrows:after{
+    content:" ";
+    display:inline-block;
+    height:40rpx;
+    width:40rpx;
+    border-width:2rpx 2rpx 0 0;
+    border-color:#888888;
+    border-style:solid;
+    transform:matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position:absolute;
+    top:50%;
+    margin-top:70rpx;
+    right:28rpx;
+}
+.commNowListDetilText .title{
+    width: 487rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.commNowListDetilText .price{
+    color: #cb1818;
+}
+.commNowListDetilText .data{
+    color: #666;
+}
+.commNowListDetilText .time{
+    color: #666;
+}
+.commNowListDetilText .data text:nth-child(2){
+    margin-left: 47rpx;
+}
+.commFeatures{
+    display: flex;
+    flex-direction: row;
+    font-size: 30rpx;
+    color: #76bcf5;
+    text-align: center;
+    height: 150rpx;
+    border-bottom: 1px solid #d9d9d9;
+    justify-content:space-around;
+    align-items:center;
+}
+.item{
+    flex-grow: 1;
+}
+.footNewComm{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 98rpx;
+    background: #ff894c;
+    color: #fff;
+    font-size: 36rpx;
+    line-height: 98rpx;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+.footNewCommhover{
+    background: #fd7d3b;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.share{
+    border-radius: 6px;
+    background: #fff;
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 0 10rpx 10rpx 10rpx;
+}
+.share .title{
+    display: block;
+    font-size: 30rpx;
+    text-align: center;
+    padding: 10rpx;
+    position: relative;
+}
+.shareCon{
+    border: 1px solid #d8d8d8;
+    font-size: 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10rpx;
+    height: 100rpx;
+    border-radius: 5px;
+    line-height: 0;
+}
+.shareDataImg{
+    width: 130rpx;
+    height: 130rpx;
+}
+.shareData{
+    display: flex;
+    margin-top: 15rpx;
+    font-size: 30rpx;
+}
+.shareDataTextTitle{
+    line-height: 35rpx;
+}
+.shareDataText{
+    margin-left: 15rpx;
+}
+.shareDataTextPrice{
+    margin-top: 20rpx;
+}
+.btnBox{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    font-size: 30rpx;
+    text-align: center;
+    margin: 25rpx auto 10rpx auto;
+}
+.shareDataTextPrice{
+    color: red;
+}
+.btnShare{
+    height: 50rpx;
+    border: 1px solid #d9d9d9;
+    width: 250rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+    border-radius: 5px;
+}
+.shareBg{
+    background: #ff894c;
+    color: #fff;
+    border: 1px solid  #ff894c;
+}
+.btnShareHover{
+    background: #d8d8d8;
+}
+.shareBgHover{
+    background: #fd7d3b;
+}

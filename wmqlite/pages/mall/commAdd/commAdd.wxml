@@ -1,0 +1,33 @@
+<view class="addImgList">
+    <view class="addImgChild" wx:for="{{imgUrl}}" bindlongtap="delImg" wx:key="index" data-num="{{index}}"><image src="{{imgUrl[index].url}}"></image></view>
+    <view class="addImgBtn" bindtap="addImg">
+        <image src="/style/icons/addImg.png" style="width:56rpx;height:56rpx"></image>
+        <view class="text">{{imgUrl.length<=8?"添加图片":"最多9张"}}</view>
+    </view>
+</view>
+<view class="setTitle">
+    <input type="text" placeholder="商品名称如【低价促销】云南新鲜蓝莓" maxlength="30" bindblur="setTitle" value="{{title}}"/>
+</view>
+<view class="setBewrite">
+    <textarea placeholder="输入商品描述" maxlength="200" bindblur="setBeWrite" value="{{beWirte}}"/>
+</view>
+<view class="setSize" wx:for="{{size}}" wx:key="*this">
+    <view class="showComplete ty"><text>型号</text><text>{{size[index].name}}</text><text>{{size[index].price}}</text><image src="/style/icons/delSize.png" style="width:32rpx;height:32rpx" data-num="{{index}}" bindtap="delSize"></image>
+    </view>
+    <view class="size ty">
+        <text>型号</text>
+        <input maxlength="10" type="text" placeholder="输入产品价格，如：绿色36码" bindblur="setSize"  data-num="{{index}}"/>
+    </view>
+    <view class="price ty">
+        <text>价格</text>
+        <input maxlength="10" type="digit" placeholder="输入产品价格" bindblur="setPrice"  data-num="{{index}}"/>
+    </view>
+</view>
+<view class="addSize" bindtap="addSize">
++添加型号
+</view>
+<!--<view class="addDetail" hover-class="addDetailHov">
+    <view class="text">商品详情</view>
+    <view class="arrow"></view>
+</view>-->
+<view class="addMall" hover-class="addMallHover" bindtap="addMall">发布商品</view>

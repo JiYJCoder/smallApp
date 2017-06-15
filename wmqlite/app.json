@@ -1,0 +1,63 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/mine/mine",
+        "pages/mall/commodity/commodity",
+        "pages/order/myOrder/myOrder",
+        "pages/wallet/myWallet/myWallet",
+        "pages/order/withdraw/withdraw",
+        "pages/wallet/moneyDetails/moneyDetails",
+        "pages/order/orderDetails/orderDetails",
+        "pages/card/card",
+        "pages/mall/mallAuthority/mallAuthority",
+        "pages/mall/commAdd/commAdd",
+        "pages/mall/commDetails/commDetails",
+        "pages/trend/trend",
+        "pages/neartrend/neartrend",
+        "pages/post/post",
+        "pages/mytrend/mytrend",
+        "pages/login/login",
+        "pages/register/register",
+        "pages/userinfo/userinfo",
+        "pages/invites/invites",
+        "pages/cards/cards",
+        "pages/pcards/pcards",
+        "pages/vcards/vcards",
+        "pages/rcards/rcards",
+        "pages/rpcards/rpcards",
+        "pages/rvcards/rvcards"
+    ],
+    "window": {
+        "backgroundColor": "#f1f1f1",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ff894c",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "#fff",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "borderStyle": "#e1e1e1",
+        "color": "#666",
+        "selectedColor": "#ff894c",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "style/icons/card.png",
+                "selectedIconPath": "style/icons/card_select.png",
+                "text": "名片"
+            },
+            {
+                "pagePath": "pages/trend/trend",
+                "iconPath": "style/icons/finder.png",
+                "selectedIconPath": "style/icons/finder_select.png",
+                "text": "发现"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "iconPath": "style/icons/mine.png",
+                "selectedIconPath": "style/icons/mine_select.png",
+                "text": "我"
+            }
+        ]
+    }
+}

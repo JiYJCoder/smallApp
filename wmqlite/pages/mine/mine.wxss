@@ -1,0 +1,33 @@
+.mine-face image{width:54px; height:54px;}
+.weui-cell__bd{margin-left:10px;}
+.cell-info{font-size:14px;}
+.weui-cell__ft image{width:24px; height:24px;}
+.weui-cell_access>.weui-cell__bd{margin-left:0px;}
+.weui-cell_access>.weui-cell__hd image{width:24px;height:24px; vertical-align: middle; margin-right:5px;}
+.navMallMoney{
+    display: flex;
+    flex-direction: row;
+    height: 65rpx;
+    justify-content: center;
+}
+.navMall{
+    border-right: 1px solid #d8d8d8;
+}
+.item{
+    height: 50rpx;
+    line-height: 50rpx;
+    flex-grow:1;
+    text-align: center;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: center;
+}
+.item text{
+    margin-left: 15rpx;
+    display: inline-block;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.navHov{
+    color: #ff894c;
+}

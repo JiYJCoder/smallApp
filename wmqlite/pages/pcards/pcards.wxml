@@ -1,0 +1,24 @@
+<view class="page">
+    <block wx:if="{{items}}">
+    <block wx:if="{{items.length==0}}">
+        <view class="page-nodata">
+        <view><icon type="info" size="100" color="#e1e1e1"/></view>
+        <view class="nodata-desc">我还没有赞过别人哦~</view>
+        </view>
+    </block>
+    <block wx:else>
+    <view class="weui-cells">
+    <view id="{{card.userId}}" class="weui-cell" wx:for="{{items}}" wx:for-item="card" bindtap="clickCard">
+        <view class="weui-cell__hd">
+            <image src="{{card.face}}" mode="aspectFill"/>
+        </view>
+        <view class="weui-cell__bd">
+            <view>{{card.truename}}</view>
+            <view class="cell-info">{{card.company}}</view>
+        </view>
+        <view class="weui-cell__ft" style="font-size:30rpx">{{card.dateFormat}}</view>
+    </view>
+    </view>
+    </block>
+    </block>
+</view>

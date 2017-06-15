@@ -1,0 +1,136 @@
+page{
+    padding-bottom: 120rpx;
+}
+.addImgList{
+    display: flex;
+    flex-wrap: wrap;
+    height: 320rpx;
+    padding: 20rpx;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.addImgBtn image{
+    margin-top: 26rpx;
+}
+.addImgBtn{
+    width: 146rpx;
+    height: 146rpx;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+.addImgBtn .text{
+    font-size: 24rpx;
+    color: #666;
+}
+.addImgChild{
+    width: 149rpx;
+    height: 149rpx;
+    border-radius:5px;
+    margin-right: 18rpx;
+    margin-bottom: 18rpx;
+    position: relative;
+}
+.addImgChild image{
+    width: 149rpx;
+    height: 149rpx;
+    border-radius:5px; 
+}
+.setTitle{
+    margin-top: 10rpx;
+    font-size: 30rpx;
+    border-bottom: 1px solid #d9d9d9;
+    background: #fff;
+    padding: 0 20rpx;
+    height: 89rpx;
+    line-height: 89rpx;
+}
+.setTitle input{
+    display: block;
+    width: 100%;
+    height: 89rpx;
+}
+.setBewrite{
+    font-size: 30rpx;
+    background: #fff;
+    padding:13rpx 20rpx;
+    height: 146rpx;
+}
+.setBewrite textarea{
+    display: block;
+    height: 146rpx;
+    width: 100%;
+}
+.setSize{
+    padding: 0 20rpx;
+    font-size: 30rpx;
+    color: #1a1a1a;
+    background: #fff;
+    margin-top: 10rpx;
+}
+.setSize .ty{
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    border-bottom: 1px solid #d9d9d9;
+}
+.setSize .ty text:nth-child(2){
+    margin-left: 33rpx;
+    flex-grow:1;
+}
+.setSize .ty text:nth-child(3){
+    margin-right: 33rpx;
+}
+.setSize .ty input{
+    flex-grow: 1;
+    margin-left: 33rpx;
+}
+.addSize{
+    height: 88rpx;
+    color: #004ecc;
+    font-size: 30rpx;
+    padding: 0 30rpx;
+    line-height: 88rpx;
+}
+.addDetail{
+    background: #fff;
+    width: 100%;
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 30rpx;
+    padding:0 20rpx;
+    display: flex;
+    box-sizing: border-box;
+    justify-content:space-between;
+    align-items: center;
+}
+.addDetailHov{
+    background: #d8d8d8;
+}
+.arrow{
+    content:" ";
+    display:inline-block;
+    height:24rpx;
+    width:24rpx;
+    border-width:2rpx 2rpx 0 0;
+    border-color:#303030;
+    border-style:solid;
+    transform:matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.addMall{
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #ff894c;
+    font-size: 36rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    width: 100%;
+}
+.addMallHover{
+    background: #ff7b37;
+}

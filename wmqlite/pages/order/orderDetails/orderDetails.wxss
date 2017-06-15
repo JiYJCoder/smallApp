@@ -1,0 +1,89 @@
+.title{
+    background: #fff;
+    min-height: 178rpx;
+    margin-top: 20rpx;
+    padding: 0 20rpx;
+    overflow: hidden;
+    font-size: 30rpx;
+}
+.consignee{
+    margin-top: 15rpx;
+}
+.consignee .name{
+    font-size: 36rpx;
+}
+.consignee .tel{
+    float: right;
+    color: #ff894c;
+}
+.address{
+    word-break:break-all;
+}
+.orderDetails{
+    background: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    margin-top: 20rpx;
+    padding: 23rpx 20rpx;
+    display: flex;
+}
+.orderDetailsTitle{
+    font-size: 30rpx;
+    margin-left: 13rpx;
+    line-height: 36rpx;
+    margin-right:10rpx;
+    flex-grow:1;
+}
+.orderDetailsPri{
+    color: #cb1818;
+    font-size: 32rpx;
+}
+.orderDetailsPri .num{
+    text-align: right;
+}
+.orderPriceDetails{
+    background: #fff;
+    font-size: 32rpx;
+    padding: 15rpx 20rpx;
+}
+.orderPriceDetails .ty{
+    display: flex;
+    justify-content: space-between;
+}
+.mallFreight{
+    padding-bottom: 5rpx;
+}
+.realPrice{
+    height: 86rpx;
+    line-height: 86rpx;
+}
+.realPrice text:nth-child(2){
+    color: #cb1818;
+    font-size: 36rpx;
+}
+.contactBtn{
+    width: 278rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    text-align: center;
+    border: 1px solid #1a1a1a;
+    border-radius:5px;
+    background: #fff; 
+}
+.contactBtnHover{
+    background: #efefef;
+}
+.btn{
+    margin-top: 30rpx;
+    display: flex;
+    padding: 0 50rpx;
+    justify-content: center;
+}
+.payBtn{
+    background: #ff894c;
+    color: #fff;
+    border: 1px solid #ff894c;
+    margin-left: 48rpx;
+}
+.payBtnHov:hover{
+    background: darkorange;
+}

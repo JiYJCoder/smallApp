@@ -1,0 +1,9 @@
+<image src="/style/icons/amount.png" style="width:230rpx;height:230rpx;"></image>
+<view class="title">我的零钱</view>
+<view class="money">￥{{money/100}}</view>
+<navigator url="/pages/order/withdraw/withdraw?money={{money}}">
+    <button class="withdrawBtn" hover-class="withdrawBtnHover">
+        提现
+    </button>
+</navigator>
+<navigator url="/pages/wallet/moneyDetails/moneyDetails" class="navDetails">零钱明细</navigator>

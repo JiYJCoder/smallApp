@@ -1,0 +1,7 @@
+.weui-cell_access>.weui-cell__bd{margin-left:0px;}
+.weui-cell__ft_in-access>image{width:52px;height:52px}
+.weui-cell__hd b,.weui-cell__bd b{color:red}
+.userinfo{position:relative}
+.userface{position: absolute; top:2px; left:0px; width:54px; height: 54px; background-color:#ffffff; padding:15px; z-index: 10}
+.userface image{width:54px; height: 54px; border-radius:4px}
+.weui-btn-area{padding-top:10px; padding-bottom:10px}

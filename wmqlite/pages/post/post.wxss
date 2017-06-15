@@ -1,0 +1,2 @@
+.weui-uploader{background-color:#fff;padding:15px; overflow: hidden; clear: both}
+.weui-uploader__footer{font-weight:500; margin-top:10px; padding-top:3px; margin-left:-5px; padding-left:5px; background:url(https://m.wmq1688.com/mobile/lite/images/icons/location-icon.png) 0px 0px no-repeat; background-size:26px; text-indent:24px;}

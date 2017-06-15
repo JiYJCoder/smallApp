@@ -1,0 +1,77 @@
+<view class="commTab clearfix" wx:if="{{addBtn}}">
+    <view class="commNow {{_num == 0?'current':''}}" bindtap="tab" data-num="0">出售中</view>
+    <view class="commExpired {{_num == 1?'current':''}}" bindtap="tab" data-num="1">已下架</view>
+</view>
+<view class="commNowList" wx:if="{{_num == 0}}" wx:for="{{mallList}}">
+    <view class="commNowListDetil" id="{{mallList[index].id}}" bindtap="navDetails">
+        <view class="hd clearfix" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" style="{{item.left}}" data-index="{{index}}">
+            <view class="commNowListDetilImg">
+                <image src="{{mallList[index].cover}}" style="width:188rpx;height:188rpx;" mode="scaleToFill"></image>
+            </view>
+            <view class="commNowListDetilText">
+                <view class="title">{{mallList[index].title}}</view>
+                <view class="price">￥{{mallList[index].price/100}}</view>
+                <view class="data"><text>销量：{{mallList[index].saleNum}}</text></view>
+                <view class="time">发布时间：{{mallList[index].updateTime}}</view>
+                <view class="arrows"></view>
+            </view>
+        </view>
+        <view class="del" catchtap="delGood" data-id="{{item.id}}">
+            删除
+        </view>
+    </view>
+    <view class="commFeatures" wx:if="{{addBtn}}">
+        <view class="commFeaturesPreview item" bindtap="setDetais" id="{{mallList[index].id}}"><image src="/style/icons/preview.png" style="width:48rpx;height:48rpx"></image><view>编辑</view></view>
+        <view class="commFeaturesEwm item" data-index="{{index}}" bindtap="openShare"><image src="/style/icons/share.png" style="width:48rpx;height:48rpx"></image><view>分享</view></view>
+        <view class="commFeaturesShare item" data-id="{{item.id}}" data-type="1" bindtap="updateGoodState"><image src="/style/icons/down.png" style="width:48rpx;height:48rpx"></image><view>下架</view></view>
+    </view>
+</view>
+
+<view class="commNowList" wx:if="{{_num == 1}}" wx:for="{{mallList}}">
+    <view class="commNowListDetil" id="{{mallList[index].id}}" bindtap="navDetails">
+        <view class="hd clearfix" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" style="{{item.left}}" data-index="{{index}}">
+            <view class="commNowListDetilImg">
+                <image src="{{mallList[index].cover}}" style="width:188rpx;height:188rpx;" mode="scaleToFill"></image>
+            </view>
+            <view class="commNowListDetilText">
+                <view class="title">{{mallList[index].title}}</view>
+                <view class="price">￥{{mallList[index].price/100}}</view>
+                <view class="data"><text>销量：{{mallList[index].saleNum}}</text></view>
+                <view class="time">发布时间：{{mallList[index].updateTime}}</view>
+                <view class="arrows"></view>
+            </view>
+        </view>
+        <view class="del">
+            删除
+        </view>
+    </view>
+    <view class="commFeatures">
+        <view class="commFeaturesPreview item" bindtap="setDetais" id="{{mallList[index].id}}"><image src="/style/icons/preview.png" style="width:48rpx;height:48rpx"></image><view>编辑</view></view>
+        <view class="commFeaturesEwm item" data-index="{{index}}" bindtap="openShare"><image src="/style/icons/share.png" style="width:48rpx;height:48rpx"></image><view>分享</view></view>
+        <view class="commFeaturesShare item" data-id="{{item.id}}" data-type="0" bindtap="updateGoodState"><image src="/style/icons/up.png" style="width:48rpx;height:48rpx"></image><view>上架</view></view>
+    </view>
+</view>
+<navigator url="/pages/mall/commAdd/commAdd" wx:if="{{addBtn}}">
+    <view class="footNewComm" hover-class="footNewCommhover">
+        <image src="/style/icons/add.png" style="width:30rpx;height:30rpx;margin-right:10rpx;"></image><text>发布新商品</text>
+    </view>
+</navigator>
+<view class="bg" wx:if="{{share}}"></view>
+<view class="share" wx:if="{{share}}" animation="{{animation}}">
+    <text class="title">分享到圈子</text>
+    <view><textarea value="【推荐】性价比超高，绝对优惠" maxlength="140" fixed="true" class="shareCon" bindblur="setContent" /></view>
+    <view class="shareData">
+        <view class="shareDataImg"><image src="{{shareData.imgUrl}}" mode="scaleToFill" style="width:130rpx;height:130rpx;"></image></view>
+        <view class="shareDataText">
+            <view class="shareDataTextTitle">
+                {{shareData.title}}
+            </view>
+            <view class="shareDataTextPrice">￥{{shareData.price/100}}</view>
+        </view>
+    </view>
+    <view class="btnBox">
+        <view class="btnShare" hover-class="btnShareHover" bindtap="closeShare">取消</view>
+        <view class="btnShare shareBg" hover-class="shareBgHover" bindtap="share">分享</view>
+    </view>
+</view>
+

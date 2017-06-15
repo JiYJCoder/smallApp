@@ -1,0 +1,59 @@
+<swiper indicator-dots="{{true}}" style="width:100%;height:610rpx;overflow: hidden;">
+    <swiper-item wx:for="{{datas.pics}}" bindtap="previewImage" data-num="{{index}}">
+      <image src="{{item}}" style="width:100%;height:610rpx" mode="aspectFit"></image>
+    </swiper-item>
+</swiper>
+<view class="DetailsData">
+    <view class="DetailsDataOne">
+        <view class="DetailsDataPrice">￥{{datas.price/100}}</view>
+        <view wx:if="{{datas.state == 0}}" class="DetailsDataBtn" hover-class="DetailsDataBtnHov" bindtap="showBuy">购买</view>
+        <view wx:else class="DetailsDataBtn current">已下架</view>
+    </view>
+    <view class="title">{{datas.title}}</view>
+    <view class="bewrite">{{datas.remark}}</view>
+</view>
+<!--<view class="navDetails" hover-class="navDetailsHover">
+    <view class="text">商品详情</view>
+    <view class="arrow"></view>
+</view>-->
+<view class="bg" wx:if="{{showBuy}}"></view>
+<view class="buyShow" wx:if="{{showBuy}}">
+    <view class="buyShowHead">
+        <view class="img"><image src="{{datas.pics[0]}}" style="width:192rpx;height:192rpx;margin-top:4rpx;" mode="scaleToFill"></image></view>
+        <view class="numPrice">
+            <view class="price">￥{{datas.modes[_sel].price/100}}</view>
+            <view class="num">已选{{_num}}件</view>
+        </view>
+        <view class="close" bindtap="hideBuy"><image src="/style/icons/close.png" style="width:38rpx;height:38rpx"></image></view>
+    </view>
+    <view class="mallNum">
+        <view class="title">数量</view>
+        <view class="btn">
+            <view class="less" bindtap="less"><image src="/style/icons/less.png" style="width:20rpx;height:1px"></image></view>
+            <input type="number" value="{{_num}}" bindblur="setNum" />
+            <view class="add" bindtap="add"><image src="/style/icons/addNum.png" style="width:20rpx;height:20rpx"></image></view>
+        </view>
+    </view>
+    <view class="mallNorm">
+        <view class="title">规格</view>
+        <view class="NormList">
+            <view wx:for="{{datas.modes}}" class="NormChild {{_sel==index?'current':''}}" bindtap="sel" data-num="{{index}}">{{datas.modes[index].name}}</view>
+        </view>
+    </view>
+    <view class="address">
+        <view class="navDetails addressSel" hover-class="navDetailsHover" bindtap="addressSel">
+            <view class="text">收货地址</view>
+            <view class="arrow"></view>
+        </view>
+        <view class="addressData" wx:if="{{address.flag}}">
+            <view class="addressCity">{{address.provinceName}}  {{address.cityName}}  {{address.countyName}}</view>
+            <view class="addressDetails">{{address.detailInfo}}</view>
+            <view class="addressTelnName">{{address.userName+"："}} {{address.telNumber}}</view>
+        </view>
+    </view>
+    <view class="tip">
+        <image src="/style/icons/tip.png" style="width:32rpx;height:32rpx"></image>
+        <text>请与商家确认订单，平台不作资金及订单监管</text>
+    </view>
+    <button class="orderBtn" hover-class="orderBtnHov" bindtap="doGoodOrder">提交订单</button>
+</view>
